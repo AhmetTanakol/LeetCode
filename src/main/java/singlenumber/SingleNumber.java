@@ -22,6 +22,14 @@ Output: 4
 public class SingleNumber {
 
     public int singleNumber(int[] nums) {
+        int result = 0;
+        for(int num : nums) {
+            result ^= num;
+        }
+        return result;
+    }
+
+    public int singleNumberSolution2(int[] nums) {
         if (nums.length == 1) {
             return nums[0];
         }
