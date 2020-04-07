@@ -54,7 +54,7 @@ public class MedianSortedArrays {
         if (nums.size() % 2 == 0) {
             return ((double) (nums.get(nums.size() / 2) + nums.get((nums.size() - 1) / 2))) / 2;
         } else {
-            return (double) nums.get((nums.size() - 1) / 2);
+            return (double) nums.get(nums.size() / 2);
         }
     }
 
