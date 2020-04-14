@@ -41,20 +41,33 @@ shift[i].length == 2
 public class PerformStringShift {
 
     public String stringShift(String s, int[][] shift) {
-        LinkNode startNode = createLinkedList(s);
+        int numberOfRightShifts = 0;
+        int numberOfLeftShifts = 0;
         for (int i = 0; i < shift.length; i++) {
-            boolean right = shift[i][0] == 1;
-            int amount = shift[i][1];
-            for (int j = 0; j < amount; j++) {
-                if (right) {
-                    LinkNode tempNode = startNode;
-                    startNode = startNode.prev;
-                    startNode.next = tempNode;
-                } else {
-                    LinkNode tempNode = startNode;
-                    startNode = startNode.next;
-                    startNode.prev = tempNode;
-                }
+            if (shift[i][0] == 1) {
+                numberOfRightShifts += shift[i][1];
+            } else {
+                numberOfLeftShifts += shift[i][1];
+            }
+        }
+        if (numberOfRightShifts == numberOfLeftShifts) {
+            return s;
+        }
+        boolean right = numberOfRightShifts > numberOfLeftShifts;
+        int amount = numberOfRightShifts > numberOfLeftShifts
+                ? numberOfRightShifts - numberOfLeftShifts
+                : numberOfLeftShifts - numberOfRightShifts;
+
+        LinkNode startNode = createLinkedList(s);
+        for (int j = 0; j < amount; j++) {
+            if (right) {
+                LinkNode tempNode = startNode;
+                startNode = startNode.prev;
+                startNode.next = tempNode;
+            } else {
+                LinkNode tempNode = startNode;
+                startNode = startNode.next;
+                startNode.prev = tempNode;
             }
         }
 
