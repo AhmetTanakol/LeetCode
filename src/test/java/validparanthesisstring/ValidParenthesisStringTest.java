@@ -91,6 +91,4 @@ public class ValidParenthesisStringTest {
         String s = "(*(()))((())())*(**(()))((*)()(()))*(())()(())(()";
         assertFalse(validParenthesisString.checkValidString(s));
     }
-
-    ß
 }
