@@ -21,29 +21,29 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 I can be placed before V (5) and X (10) to make 4 and 9.
 X can be placed before L (50) and C (100) to make 40 and 90.
 C can be placed before D (500) and M (1000) to make 400 and 900.
-Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.
+Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 
 Example 1:
 
-Input: 3
-Output: "III"
+Input: "III"
+Output: 3
 Example 2:
 
-Input: 4
-Output: "IV"
+Input: "IV"
+Output: 4
 Example 3:
 
-Input: 9
-Output: "IX"
+Input: "IX"
+Output: 9
 Example 4:
 
-Input: 58
-Output: "LVIII"
-Explanation: L = 50, V = 5, III = 3.
+Input: "LVIII"
+Output: 58
+Explanation: L = 50, V= 5, III = 3.
 Example 5:
 
-Input: 1994
-Output: "MCMXCIV"
+Input: "MCMXCIV"
+Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 public class RomanToInteger {
