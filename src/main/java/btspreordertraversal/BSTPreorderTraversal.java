@@ -1,5 +1,7 @@
 package btspreordertraversal;
 
+import java.util.Arrays;
+
 /*
 Return the root node of a binary search tree that matches the given preorder traversal.
 
@@ -20,6 +22,21 @@ Note:
 The values of preorder are distinct.
  */
 public class BSTPreorderTraversal {
+
+    public TreeNode bstFromPreorder_1(int[] preorder) {
+        TreeNode parentNode = new TreeNode(preorder[0]);
+        int parentVal = preorder[0];
+        int[] left = Arrays.stream(preorder).filter(i -> i < parentVal).toArray();
+        int[] right = Arrays.stream(preorder).filter(i -> i > parentVal).toArray();
+        if (left.length != 0) {
+            parentNode.left = bstFromPreorder(left);
+        }
+        if (right.length != 0) {
+            parentNode.right = bstFromPreorder(right);
+        }
+
+        return parentNode;
+    }
 
     public TreeNode bstFromPreorder(int[] preorder) {
         TreeNode rootNode = new TreeNode(preorder[0]);
